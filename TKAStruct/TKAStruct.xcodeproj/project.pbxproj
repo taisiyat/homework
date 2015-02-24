@@ -1,0 +1,251 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A1CAB671A8CCB070023CF70 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CAB661A8CCB070023CF70 /* main.c */; };
+		8A1CAB6F1A8CCCF00023CF70 /* TKAStructBuild.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CAB6D1A8CCCF00023CF70 /* TKAStructBuild.c */; };
+		8A1CAB721A8CCD2F0023CF70 /* TKAStructureWork.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CAB701A8CCD2F0023CF70 /* TKAStructureWork.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A1CAB611A8CCB070023CF70 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8A1CAB631A8CCB070023CF70 /* TKAStruct */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TKAStruct; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1CAB661A8CCB070023CF70 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		8A1CAB6D1A8CCCF00023CF70 /* TKAStructBuild.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAStructBuild.c; sourceTree = "<group>"; };
+		8A1CAB6E1A8CCCF00023CF70 /* TKAStructBuild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAStructBuild.h; sourceTree = "<group>"; };
+		8A1CAB701A8CCD2F0023CF70 /* TKAStructureWork.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAStructureWork.c; sourceTree = "<group>"; };
+		8A1CAB711A8CCD2F0023CF70 /* TKAStructureWork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAStructureWork.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A1CAB601A8CCB070023CF70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A1CAB5A1A8CCB070023CF70 = {
+			isa = PBXGroup;
+			children = (
+				8A1CAB651A8CCB070023CF70 /* TKAStruct */,
+				8A1CAB641A8CCB070023CF70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A1CAB641A8CCB070023CF70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A1CAB631A8CCB070023CF70 /* TKAStruct */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A1CAB651A8CCB070023CF70 /* TKAStruct */ = {
+			isa = PBXGroup;
+			children = (
+				8A1CAB661A8CCB070023CF70 /* main.c */,
+				8A1CAB6D1A8CCCF00023CF70 /* TKAStructBuild.c */,
+				8A1CAB6E1A8CCCF00023CF70 /* TKAStructBuild.h */,
+				8A1CAB701A8CCD2F0023CF70 /* TKAStructureWork.c */,
+				8A1CAB711A8CCD2F0023CF70 /* TKAStructureWork.h */,
+			);
+			path = TKAStruct;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A1CAB621A8CCB070023CF70 /* TKAStruct */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A1CAB6A1A8CCB070023CF70 /* Build configuration list for PBXNativeTarget "TKAStruct" */;
+			buildPhases = (
+				8A1CAB5F1A8CCB070023CF70 /* Sources */,
+				8A1CAB601A8CCB070023CF70 /* Frameworks */,
+				8A1CAB611A8CCB070023CF70 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKAStruct;
+			productName = TKAStruct;
+			productReference = 8A1CAB631A8CCB070023CF70 /* TKAStruct */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A1CAB5B1A8CCB070023CF70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = TKhomeWork;
+				TargetAttributes = {
+					8A1CAB621A8CCB070023CF70 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 8A1CAB5E1A8CCB070023CF70 /* Build configuration list for PBXProject "TKAStruct" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A1CAB5A1A8CCB070023CF70;
+			productRefGroup = 8A1CAB641A8CCB070023CF70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A1CAB621A8CCB070023CF70 /* TKAStruct */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A1CAB5F1A8CCB070023CF70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A1CAB721A8CCD2F0023CF70 /* TKAStructureWork.c in Sources */,
+				8A1CAB6F1A8CCCF00023CF70 /* TKAStructBuild.c in Sources */,
+				8A1CAB671A8CCB070023CF70 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8A1CAB681A8CCB070023CF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8A1CAB691A8CCB070023CF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8A1CAB6B1A8CCB070023CF70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A1CAB6C1A8CCB070023CF70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A1CAB5E1A8CCB070023CF70 /* Build configuration list for PBXProject "TKAStruct" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A1CAB681A8CCB070023CF70 /* Debug */,
+				8A1CAB691A8CCB070023CF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A1CAB6A1A8CCB070023CF70 /* Build configuration list for PBXNativeTarget "TKAStruct" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A1CAB6B1A8CCB070023CF70 /* Debug */,
+				8A1CAB6C1A8CCB070023CF70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A1CAB5B1A8CCB070023CF70 /* Project object */;
+}
