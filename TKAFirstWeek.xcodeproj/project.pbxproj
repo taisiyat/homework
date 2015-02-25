@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8A3374B91A8E329600799BBA /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3374B81A8E329600799BBA /* main.c */; };
+		8A3374C11A8E33AC00799BBA /* TKAMamaPapaOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3374BF1A8E33AC00799BBA /* TKAMamaPapaOutput.c */; };
+		8A3374C41A8E340500799BBA /* TKAMamaPapaTest.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3374C21A8E340500799BBA /* TKAMamaPapaTest.c */; };
+		8A3374C71A8E71C200799BBA /* TKAMacros.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3374C51A8E71C200799BBA /* TKAMacros.c */; };
+		8A3F3DF71A8F44BE0038BB6D /* TKABitOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F3DF51A8F44BE0038BB6D /* TKABitOutput.c */; };
+		8A3F3DFA1A8F62100038BB6D /* TKAByteOutput.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F3DF81A8F62100038BB6D /* TKAByteOutput.c */; };
+		8A3F3DFD1A90D7C30038BB6D /* TKAStruct.c in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F3DFB1A90D7C30038BB6D /* TKAStruct.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8A3374B31A8E329600799BBA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8A3374B51A8E329600799BBA /* TKAFirstWeek */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TKAFirstWeek; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A3374B81A8E329600799BBA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		8A3374BF1A8E33AC00799BBA /* TKAMamaPapaOutput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAMamaPapaOutput.c; sourceTree = "<group>"; };
+		8A3374C01A8E33AC00799BBA /* TKAMamaPapaOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAMamaPapaOutput.h; sourceTree = "<group>"; };
+		8A3374C21A8E340500799BBA /* TKAMamaPapaTest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAMamaPapaTest.c; sourceTree = "<group>"; };
+		8A3374C31A8E340500799BBA /* TKAMamaPapaTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAMamaPapaTest.h; sourceTree = "<group>"; };
+		8A3374C51A8E71C200799BBA /* TKAMacros.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAMacros.c; sourceTree = "<group>"; };
+		8A3374C61A8E71C200799BBA /* TKAMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAMacros.h; sourceTree = "<group>"; };
+		8A3F3DF51A8F44BE0038BB6D /* TKABitOutput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKABitOutput.c; sourceTree = "<group>"; };
+		8A3F3DF61A8F44BE0038BB6D /* TKABitOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKABitOutput.h; sourceTree = "<group>"; };
+		8A3F3DF81A8F62100038BB6D /* TKAByteOutput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAByteOutput.c; sourceTree = "<group>"; };
+		8A3F3DF91A8F62100038BB6D /* TKAByteOutput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAByteOutput.h; sourceTree = "<group>"; };
+		8A3F3DFB1A90D7C30038BB6D /* TKAStruct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TKAStruct.c; sourceTree = "<group>"; };
+		8A3F3DFC1A90D7C30038BB6D /* TKAStruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAStruct.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8A3374B21A8E329600799BBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8A3374AC1A8E329600799BBA = {
+			isa = PBXGroup;
+			children = (
+				8A3374B71A8E329600799BBA /* TKAFirstWeek */,
+				8A3374B61A8E329600799BBA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8A3374B61A8E329600799BBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8A3374B51A8E329600799BBA /* TKAFirstWeek */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8A3374B71A8E329600799BBA /* TKAFirstWeek */ = {
+			isa = PBXGroup;
+			children = (
+				8A3374B81A8E329600799BBA /* main.c */,
+				8A53BF201A9DE3DC00838491 /* TKAStruct */,
+				8A53BF211A9DE3FE00838491 /* TKABitByteOutput */,
+				8A53BF221A9DE42300838491 /* TKAMacros */,
+				8A53BF231A9DE43500838491 /* TKAMamaPapaOutput */,
+			);
+			path = TKAFirstWeek;
+			sourceTree = "<group>";
+		};
+		8A53BF201A9DE3DC00838491 /* TKAStruct */ = {
+			isa = PBXGroup;
+			children = (
+				8A3F3DFB1A90D7C30038BB6D /* TKAStruct.c */,
+				8A3F3DFC1A90D7C30038BB6D /* TKAStruct.h */,
+			);
+			name = TKAStruct;
+			sourceTree = "<group>";
+		};
+		8A53BF211A9DE3FE00838491 /* TKABitByteOutput */ = {
+			isa = PBXGroup;
+			children = (
+				8A3F3DF81A8F62100038BB6D /* TKAByteOutput.c */,
+				8A3F3DF91A8F62100038BB6D /* TKAByteOutput.h */,
+				8A3F3DF51A8F44BE0038BB6D /* TKABitOutput.c */,
+				8A3F3DF61A8F44BE0038BB6D /* TKABitOutput.h */,
+			);
+			name = TKABitByteOutput;
+			sourceTree = "<group>";
+		};
+		8A53BF221A9DE42300838491 /* TKAMacros */ = {
+			isa = PBXGroup;
+			children = (
+				8A3374C51A8E71C200799BBA /* TKAMacros.c */,
+				8A3374C61A8E71C200799BBA /* TKAMacros.h */,
+			);
+			name = TKAMacros;
+			sourceTree = "<group>";
+		};
+		8A53BF231A9DE43500838491 /* TKAMamaPapaOutput */ = {
+			isa = PBXGroup;
+			children = (
+				8A3374BF1A8E33AC00799BBA /* TKAMamaPapaOutput.c */,
+				8A3374C01A8E33AC00799BBA /* TKAMamaPapaOutput.h */,
+				8A3374C21A8E340500799BBA /* TKAMamaPapaTest.c */,
+				8A3374C31A8E340500799BBA /* TKAMamaPapaTest.h */,
+			);
+			name = TKAMamaPapaOutput;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8A3374B41A8E329600799BBA /* TKAFirstWeek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8A3374BC1A8E329600799BBA /* Build configuration list for PBXNativeTarget "TKAFirstWeek" */;
+			buildPhases = (
+				8A3374B11A8E329600799BBA /* Sources */,
+				8A3374B21A8E329600799BBA /* Frameworks */,
+				8A3374B31A8E329600799BBA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TKAFirstWeek;
+			productName = TKAFirstWeek;
+			productReference = 8A3374B51A8E329600799BBA /* TKAFirstWeek */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8A3374AD1A8E329600799BBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = TKhomeWork;
+				TargetAttributes = {
+					8A3374B41A8E329600799BBA = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 8A3374B01A8E329600799BBA /* Build configuration list for PBXProject "TKAFirstWeek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8A3374AC1A8E329600799BBA;
+			productRefGroup = 8A3374B61A8E329600799BBA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8A3374B41A8E329600799BBA /* TKAFirstWeek */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8A3374B11A8E329600799BBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3F3DFA1A8F62100038BB6D /* TKAByteOutput.c in Sources */,
+				8A3374B91A8E329600799BBA /* main.c in Sources */,
+				8A3374C71A8E71C200799BBA /* TKAMacros.c in Sources */,
+				8A3374C11A8E33AC00799BBA /* TKAMamaPapaOutput.c in Sources */,
+				8A3F3DF71A8F44BE0038BB6D /* TKABitOutput.c in Sources */,
+				8A3374C41A8E340500799BBA /* TKAMamaPapaTest.c in Sources */,
+				8A3F3DFD1A90D7C30038BB6D /* TKAStruct.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8A3374BA1A8E329600799BBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8A3374BB1A8E329600799BBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8A3374BD1A8E329600799BBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A3374BE1A8E329600799BBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8A3374B01A8E329600799BBA /* Build configuration list for PBXProject "TKAFirstWeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A3374BA1A8E329600799BBA /* Debug */,
+				8A3374BB1A8E329600799BBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8A3374BC1A8E329600799BBA /* Build configuration list for PBXNativeTarget "TKAFirstWeek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A3374BD1A8E329600799BBA /* Debug */,
+				8A3374BE1A8E329600799BBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8A3374AD1A8E329600799BBA /* Project object */;
+}
