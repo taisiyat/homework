@@ -76,6 +76,15 @@
 			isa = PBXGroup;
 			children = (
 				8A45C6241A9335D800025837 /* main.c */,
+				8AD7C9D61A9F58FD00EC35D8 /* TKAHumanStruct */,
+				8AD7C9D71A9F592F00EC35D8 /* TKAHumanObject */,
+			);
+			path = TKASecondWeek;
+			sourceTree = "<group>";
+		};
+		8AD7C9D61A9F58FD00EC35D8 /* TKAHumanStruct */ = {
+			isa = PBXGroup;
+			children = (
 				8A45C62B1A93363E00025837 /* TKAHumanStruct.c */,
 				8A45C62C1A93363E00025837 /* TKAHumanStruct.h */,
 				8A48CDF11A98DE04002B0B9E /* TKAStringStruct.c */,
@@ -84,12 +93,19 @@
 				8A45C6301A93394300025837 /* TKAHumanStructTest.h */,
 				8A48CDF41A990A68002B0B9E /* TKAArrayStruct.c */,
 				8A48CDF51A990A68002B0B9E /* TKAArrayStruct.h */,
+			);
+			name = TKAHumanStruct;
+			sourceTree = "<group>";
+		};
+		8AD7C9D71A9F592F00EC35D8 /* TKAHumanObject */ = {
+			isa = PBXGroup;
+			children = (
 				8A4DD5441A962529003EAB27 /* TKAObject.c */,
 				8A4DD5451A962529003EAB27 /* TKAObject.h */,
 				8A4DD5471A962DBF003EAB27 /* TKAObjectString.c */,
 				8A4DD5481A962DBF003EAB27 /* TKAObjectString.h */,
 			);
-			path = TKASecondWeek;
+			name = TKAHumanObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

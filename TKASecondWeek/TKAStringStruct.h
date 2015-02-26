@@ -36,9 +36,9 @@ extern
 uint64_t TKAStringStructGetLenght(TKAStringStruct *string);
 
 extern
-void TKAStringStructSetData(TKAStringStruct *string, char *datastring);
+char *TKAStringStructGetData(TKAStringStruct *string);
 
 extern
-char *TKAStringStructGetData(TKAStringStruct *string);
+void TKAStringStructCopyData(TKAStringStruct *string, char *data, uint64_t lenght);
 
 #endif /* defined(__TKASecondWeek__TKAStringStruct__) */

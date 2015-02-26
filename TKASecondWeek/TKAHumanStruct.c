@@ -18,12 +18,11 @@ void TKAHumanStructDealloc(TKAHumanStruct *human);
 
 // make macro
 static
-void THAHumanStructFreeStringFild(void *fild);
+void TKAHumanStructFreeString(TKAStringStruct *name);
 static
-void THAHumanStructFreeArrayFild(void *fild);
+void TKAHumanStructFreeArray(TKAArrayStruct *children);
 static
-void THAHumanStructFreeHumanFild(void *fild);
-
+void TKAHumanStructFreeHuman(TKAHumanStruct *human);
 
 #pragma mark -
 #pragma mark Public Declarations
@@ -32,56 +31,53 @@ void THAHumanStructFreeHumanFild(void *fild);
 #pragma mark Privat Implementations
 
 //make macro
-void THAHumanStructFreeStringFild(void *fild) {
-    if (NULL != fild) {
-        TKAStringStructRelease(fild);
-        free(fild);
+void TKAHumanStructFreeString(TKAStringStruct *name) {
+    if (NULL != name) {
+        TKAStringStructRelease(name);
     }
 }
 
-void THAHumanStructFreeArrayFild(void *fild) {
-    if (NULL != fild) {
-        TKAArrayStructRelease(fild);
-        free(fild);
+void TKAHumanStructFreeArray(TKAArrayStruct *children) {
+    if (NULL != children) {
+        TKAArrayStructRelease(children);
     }
 }
 
-void TKAHumanStructFreeHumanFild(void *fild) {
-    if (NULL != fild) {
-        TKAHumanStructRelease(fild);
-        free(fild);
+void TKAHumanStructFreeHuman(TKAHumanStruct *human) {
+    if (NULL != human) {
+        TKAHumanStructRelease(human);
     }
 }
 
 
 void TKAHumanStructDealloc(TKAHumanStruct *human) {
-    THAHumanStructFreeStringFild(human->_name);
-    THAHumanStructFreeArrayFild(human->_children);
-    TKAHumanStructFreeHumanFild(human->_partner);
-    TKAHumanStructFreeHumanFild(human->_father);
-    TKAHumanStructFreeHumanFild(human->_mother);
+    TKAHumanStructFreeString(TKAHumanStructGetName(human));
+    TKAHumanStructFreeArray(TKAHumanStructGetChildren(human));
+    TKAHumanStructFreeHuman(TKAHumanStructGetPartner(human));
+    TKAHumanStructFreeHuman(TKAHumanStructGetMother(human));
+    TKAHumanStructFreeHuman(TKAHumanStructGetFather(human));
     free(human);
 }
 
 #pragma mark -
 #pragma mark Public Implementations
-
-TKAHumanStruct *TKAHumanStructCreate() {
-    TKAHumanStruct *human = malloc(sizeof(*human));
-    human->_name = NULL;
-    human->_partner = NULL;
-    human->_mother = NULL;
-    human->_father = NULL;
-    human->_children = NULL;
-    human->_referenceCount=1;
-    return human;
-}
-
+//
 //TKAHumanStruct *TKAHumanStructCreate() {
-//    TKAHumanStruct *human = calloc(1, sizeof(*human));
+//    TKAHumanStruct *human = malloc(sizeof(*human));
+//    human->_name = NULL;
+//    human->_partner = NULL;
+//    human->_mother = NULL;
+//    human->_father = NULL;
+//    human->_children = NULL;
 //    human->_referenceCount=1;
 //    return human;
 //}
+
+TKAHumanStruct *TKAHumanStructCreate() {
+    TKAHumanStruct *human = calloc(1, sizeof(*human));
+    human->_referenceCount=1;
+    return human;
+}
 
 void TKAHumanStructRetain(TKAHumanStruct *human) {
     human->_referenceCount++;
@@ -95,47 +91,47 @@ void TKAHumanStructRelease(TKAHumanStruct *human) {
 }
 
 void TKAHumanStructSetName(TKAHumanStruct *human, TKAStringStruct *name) {
-    if (NULL != human->_name) {
-        TKAStringStructRelease(human->_name);
+    if (TKAHumanStructGetName(human) != name) {
+        if (NULL != TKAHumanStructGetName(human)) {
+            TKAStringStructRelease(TKAHumanStructGetName(human));
+        }
+        human->_name = name;
+        if (NULL != TKAHumanStructGetName(human)) {
+            TKAStringStructRetain(name);
+        }
     }
-    human->_name = name;
-    TKAStringStructRetain(name);
+}
+
+TKAStringStruct *TKAHumanStructGetName(TKAHumanStruct *human) {
+    return human->_name;
 }
 
 void TKAHumanStructSetAge(TKAHumanStruct *human, uint8_t age) {
     human->_age = age;
 }
 
-void TKAHumanStructSetGender(TKAHumanStruct *human, TKAGender gender) {
-    human->_gender = gender;
-}
-
-void TKAHumanStructSetHumanFild(TKAHumanStruct *human1, TKAHumanStruct *fild, TKAHumanStruct *human2) {
-    if (human1 != human2) {
-        if (NULL != fild) {
-            TKAHumanStructRelease(fild);
-            fild = NULL;
-        }
-        if (NULL != human2) {
-            fild = human2;
-            TKAHumanStructRetain(human2);
-        } else {
-            fild = NULL;
-        }
-    }
-}
-
-
-TKAStringStruct *TKAHumanStructGetName(TKAHumanStruct *human) {
-    return human->_name;
-}
-
 uint8_t TKAHumanStructGetAge(TKAHumanStruct *human) {
     return human->_age;
 }
 
+void TKAHumanStructSetGender(TKAHumanStruct *human, TKAGender gender) {
+    human->_gender = gender;
+}
+
 TKAGender TKAHumanStructGetGender(TKAHumanStruct *human) {
     return human->_gender;
+}
+
+void TKAHumanStructSetCountChildren(TKAHumanStruct *human, uint8_t count) {
+    human->_countChildren = count;
+}
+
+uint8_t TKAHumanStructGetCountChildren(TKAHumanStruct *human) {
+    return human->_countChildren;
+}
+
+TKAArrayStruct *TKAHumanStructGetChildren(TKAHumanStruct *human) {
+    return human->_children;
 }
 
 TKAHumanStruct *TKAHumanStructGetPartner(TKAHumanStruct *human) {
@@ -150,89 +146,103 @@ TKAHumanStruct *TKAHumanStructGetMother(TKAHumanStruct *human) {
     return human->_mother;
 }
 
-void TKAHumanStructSetPartner(TKAHumanStruct *partner1, TKAHumanStruct *partner2) {
-    partner1->_married = true;
-    TKAHumanStructSetHumanFild(partner1, partner1->_partner, partner2);
-}
+//make macro
 
-void TKAHumanStructSetFather(TKAHumanStruct *child, TKAHumanStruct *father) {
-    if (child != father) {
-        TKAHumanStructSetHumanFild(child, child->_father, father);
+void TKAHumanStructSetPartner(TKAHumanStruct *human1, TKAHumanStruct *human2) {
+    if (TKAHumanStructGetPartner(human1) != human2) {
+        if (NULL != TKAHumanStructGetPartner(human1)) {
+            TKAHumanStructRelease(TKAHumanStructGetPartner(human1));
+        }
+        human1->_partner = human2;
+        if (NULL != TKAHumanStructGetPartner(human1)) {
+            TKAHumanStructRetain(human2);
+        }
     }
 }
 
-void TKAHumanStructSetMother(TKAHumanStruct *child, TKAHumanStruct *mother) {
-    if (child != mother) {
-        TKAHumanStructSetHumanFild(child, child->_mother, mother);
+void TKAHumanStructSetFather(TKAHumanStruct *human1, TKAHumanStruct *human2) {
+    if (TKAHumanStructGetPartner(human1) != human2) {
+        if (NULL != TKAHumanStructGetPartner(human1)) {
+            TKAHumanStructRelease(TKAHumanStructGetPartner(human1));
+        }
+        human1->_father = human2;
+        if (NULL != TKAHumanStructGetPartner(human1)) {
+            TKAHumanStructRetain(human2);
+        }
     }
 }
 
-void TKAHumanStructSetChild(TKAHumanStruct *parent, TKAHumanStruct *child) {
-    if (child != parent) {
-        parent->_countChild++;
-        if (NULL == parent->_children) {
-            parent->_children = TKAArrayStructCreate();
+void TKAHumanStructSetMother(TKAHumanStruct *human1, TKAHumanStruct *human2) {
+    if (TKAHumanStructGetPartner(human1) != human2) {
+        if (NULL != TKAHumanStructGetPartner(human1)) {
+            TKAHumanStructRelease(TKAHumanStructGetPartner(human1));
         }
-//        boll flagchild = false;
-//        for (uint64_t incr = 0; incr < parent->_children->_lenght; incr ++) {
-//            if (NULL == parent->_children->_data){
-//                parent->_children->_data = &child;
-//                TKAHumanStructRetain(child);
-//                flagchild = true;
-//            }
-//            
-//        }
-//        if (false == flagchild) {
-        TKAArrayStructSetData( parent->_children, child);
-        TKAHumanStructRetain(child);
-        TKAHumanStructRetain(child);
-}
-}
-
-TKAHumanStruct *TKAHumanStructBorn(TKAHumanStruct *father, TKAHumanStruct *mother, TKAGender gender) {
-    if (mother != father) {
-        TKAHumanStruct *childborn = TKAHumanStructCreate();
-        childborn->_age = 0;
-        childborn->_gender = gender;
-        childborn->_countChild = 0;
-        childborn->_married = false;
-        TKAHumanStructSetHumanFild(childborn, childborn->_mother, mother);
-        TKAHumanStructSetHumanFild(childborn, childborn->_father, father);
-        
-        return childborn;
+        human1->_mother = human2;
+        if (NULL != TKAHumanStructGetPartner(human1)) {
+            TKAHumanStructRetain(human2);
         }
-    return NULL;
+    }
 }
 
 void TKAHumanStructDivorcePartner(TKAHumanStruct *human) {
-    if (human->_married == true) {
-        TKAHumanStructSetHumanFild(human, human->_partner, NULL);
-        human->_married = false;
+    if (NULL != TKAHumanStructGetPartner(human)) {
+        if (TKAHumanStructGetPartner(TKAHumanStructGetPartner(human)) == human) {
+            TKAHumanStructDivorce(human, TKAHumanStructGetPartner(human));
+        } else {
+            TKAHumanStructSetPartner(human, NULL);
+        }
     }
 }
 
 void TKAHumanStructDivorce(TKAHumanStruct *partner1, TKAHumanStruct *partner2) {
-    if (partner1 != partner2) {
-        if (partner1->_partner == partner2 && partner2->_partner == partner1) {
-            TKAHumanStructDivorcePartner(partner1);
-            TKAHumanStructDivorcePartner(partner2);
+    if (partner1 != partner2 && NULL != partner1 && NULL != partner2) {
+        if (partner1 == TKAHumanStructGetPartner(partner2) && partner2 == TKAHumanStructGetPartner(partner1)) {
+            TKAHumanStructSetPartner(partner1, NULL);
+            TKAHumanStructSetPartner(partner2, NULL);
         }
     }
 }
 
 void TKAHumanStructMarry(TKAHumanStruct *partner1, TKAHumanStruct *partner2) {
-    if (partner1 != partner2) {
-        if (partner1->_married == true) {
+    if (partner1 != partner2 && NULL != partner1 && NULL != partner2) {
+        if (NULL != TKAHumanStructGetPartner(partner1)) {
             TKAHumanStructDivorcePartner(partner1);
         }
-        if (partner2->_married == true) {
+        if (NULL != TKAHumanStructGetPartner(partner2)) {
             TKAHumanStructDivorcePartner(partner2);
         }
-        if (partner1->_married == false && partner2->_married == false) {
-            TKAHumanStructSetPartner(partner1, partner2);
-            TKAHumanStructSetPartner(partner2, partner1);
-        }
+        TKAHumanStructSetPartner(partner1, partner2);
+        TKAHumanStructSetPartner(partner2, partner1);
     }
+}
+
+void TKAHumanStructSetChild(TKAHumanStruct *parent, TKAHumanStruct *child) {
+    if (child != parent) {
+        if (NULL != child) {
+            if (NULL == TKAHumanStructGetChildren(parent)) {
+                parent->_children = TKAArrayStructCreate();
+            }
+            if (NULL != TKAHumanStructGetChildren(parent)) {
+                //             TKAArrayStructAddChild(TKAHumanStructGetChildren(parent), child);
+            }
+            parent->_countChildren ++;
+            TKAHumanStructRetain(child);
+        }
+     }
+}
+
+TKAHumanStruct *TKAHumanStructBorn(TKAHumanStruct *father, TKAHumanStruct *mother, TKAGender gender) {
+    TKAHumanStruct *newBorn = TKAHumanStructCreate();
+    TKAHumanStructSetAge(newBorn, 0);
+    TKAHumanStructSetGender(newBorn, gender);
+    TKAHumanStructSetCountChildren(newBorn, 0);
+    TKAHumanStructSetChild(father, newBorn);
+    TKAHumanStructSetFather(newBorn, father);
+    if (father !=mother) {
+        TKAHumanStructSetChild(mother, newBorn);
+        TKAHumanStructSetMother(newBorn, mother);
+    }
+    return newBorn;
 }
 
 void TKAHumanStructDie(TKAHumanStruct *human) {

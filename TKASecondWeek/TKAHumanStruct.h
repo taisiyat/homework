@@ -28,8 +28,7 @@ struct TKAHumanStruct {
     TKAStringStruct *_name;
     uint8_t _age;
     TKAGender _gender;
-    uint8_t _countChild;
-    bool _married;
+    uint8_t _countChildren;
     uint64_t _referenceCount;
     TKAHumanStruct *_partner;
     TKAHumanStruct *_father;
@@ -67,16 +66,37 @@ extern
 TKAGender TKAHumanStructGetGender(TKAHumanStruct *human);
 
 extern
+uint8_t TKAHumanStructGetCountChildren(TKAHumanStruct *human);
+
+extern
+void TKAHumanStructSetCountChildren(TKAHumanStruct *human, uint8_t count);
+
+extern
 TKAHumanStruct *TKAHumanStructGetPartner(TKAHumanStruct *human);
 
 extern
 TKAHumanStruct *TKAHumanStructGetFather(TKAHumanStruct *human);
 
 extern
+void TKAHumanStructSetFather(TKAHumanStruct *human1, TKAHumanStruct *human2);
+
+extern
 TKAHumanStruct *TKAHumanStructGetMother(TKAHumanStruct *human);
 
 extern
+void TKAHumanStructSetMother(TKAHumanStruct *human1, TKAHumanStruct *human2);
+
+extern
+TKAArrayStruct *TKAHumanStructGetChildren(TKAHumanStruct *human);
+
+extern
+void TKAHumanStructBorn1(TKAHumanStruct *newBorn, TKAHumanStruct *father, TKAHumanStruct *mother, TKAGender gender);
+
+extern
 TKAHumanStruct *TKAHumanStructBorn(TKAHumanStruct *father, TKAHumanStruct *mother, TKAGender gender);
+
+extern
+void TKAHumanStructSetChild(TKAHumanStruct *parent, TKAHumanStruct *child);
 
 extern
 void TKAHumanStructMarry(TKAHumanStruct *humanMale, TKAHumanStruct *humanFemale);

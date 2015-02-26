@@ -28,9 +28,9 @@ void TKAStringStructDealloc(TKAStringStruct *string) {
 #pragma mark Public Implementations
 
 TKAStringStruct *TKAStringStructCreate() {
-    TKAStringStruct *string =malloc(sizeof(*string));
-    string->_data = NULL;
-    string->_referenceCount=1;
+    TKAStringStruct *string =calloc(1, sizeof(*string));
+    string->_referenceCount=0;
+    string->_lenght=1;
     return string;
 }
 
@@ -59,8 +59,8 @@ uint64_t TKAStringStructGetLenght(TKAStringStruct *string) {
     return string->_lenght;
 }
 
-void TKAStringStructSetData(TKAStringStruct *string, char *data) {
-   string->_data = data;
+void TKAStringStructCopyData(TKAStringStruct *string, char *data, uint64_t lenght) {
+    memmove(string->_data, data, lenght);
 }
                              
 char *TKAStringStructGetData(TKAStringStruct *string) {
