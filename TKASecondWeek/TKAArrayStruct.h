@@ -17,8 +17,8 @@ typedef struct TKAHumanStruct TKAHumanStruct;
 
 struct TKAArrayStruct {
     uint64_t _referenceCount;
-    TKAHumanStruct **_data;
-    uint64_t _lenght;
+    uint16_t _length;
+    TKAHumanStruct **_child;
 };
 
 typedef struct TKAArrayStruct TKAArrayStruct;
@@ -33,21 +33,24 @@ extern
 void TKAArrayStructRelease(TKAArrayStruct *array);
 
 extern
-void TKAArrayStructSetLenght(TKAArrayStruct *array, uint64_t lenght);
+void TKAArrayStructSetLength(TKAArrayStruct *array, uint16_t length);
 
 extern
-uint64_t TKAArrayStructGetLenght(TKAArrayStruct *array);
+uint16_t TKAArrayStructGetLength(TKAArrayStruct *array);
 
 extern
-void TKAArrayStructSetData(TKAArrayStruct *array, TKAHumanStruct *data);
+void TKAArrayStructAddChild(TKAArrayStruct *array, TKAHumanStruct *child);
 
 extern
-void *TKAArrayStructGetData(TKAArrayStruct *array);
+void *TKAArrayStructGetChild(TKAArrayStruct *array);
 
 extern
-TKAHumanStruct *TKAArrayStructGetDataIndex(TKAArrayStruct *array, uint64_t index);
+TKAHumanStruct *TKAArrayStructGetChildIndex(TKAArrayStruct *array, uint16_t index);
    
 extern
-void TKAArrayStructSetDataIndex(TKAArrayStruct *array, void *data, uint64_t index);
+void TKAArrayStructAddChildIndex(TKAArrayStruct *array, void *data, uint16_t index);
+
+extern
+void TKAArrayStructOutput(TKAArrayStruct *array); 
 
 #endif /* defined(__TKASecondWeek__TKAArrayStruct__) */

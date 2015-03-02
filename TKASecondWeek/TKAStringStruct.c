@@ -21,6 +21,7 @@ void TKAStringStructDealloc(TKAStringStruct *string) {
     if (NULL != string->_data) {
         free(string->_data);
     }
+    
     free(string);
 }
 
@@ -28,9 +29,9 @@ void TKAStringStructDealloc(TKAStringStruct *string) {
 #pragma mark Public Implementations
 
 TKAStringStruct *TKAStringStructCreate() {
-    TKAStringStruct *string =calloc(1, sizeof(*string));
-    string->_referenceCount=0;
-    string->_lenght=1;
+    TKAStringStruct *string = calloc(1, sizeof(*string));
+    string->_referenceCount = 1;
+
     return string;
 }
 
@@ -45,24 +46,35 @@ void TKAStringStructRelease(TKAStringStruct *string) {
     }
 }
 
-void TKAStringStructSetLenght(TKAStringStruct *string, uint64_t lenght) {
-    if (string->_lenght != lenght) {
-        string->_data = realloc(string->_data, lenght * sizeof(*string->_data));
-        if (string->_lenght < lenght) {
-        memset(string->_data + string->_lenght, 0, lenght - string->_lenght);
+void TKAStringStructSetLength(TKAStringStruct *string, uint64_t length) {
+    if (string->_length != length) {
+        string->_data = realloc(string->_data, length * sizeof(*string->_data));
+        
+        if (string->_length < length) {
+            memset(string->_data + string->_length, 0, length - string->_length);
         }
-        string->_lenght = lenght;
+        
+        string->_length = length;
     }
 }
 
-uint64_t TKAStringStructGetLenght(TKAStringStruct *string) {
-    return string->_lenght;
+uint64_t TKAStringStructGetLength(TKAStringStruct *string) {
+    
+    return string->_length;
 }
 
-void TKAStringStructCopyData(TKAStringStruct *string, char *data, uint64_t lenght) {
-    memmove(string->_data, data, lenght);
+void TKAStringStructCopyData(TKAStringStruct *string, char *data, uint64_t length) {
+    
+    TKAStringStructSetLength(string, length);
+    memmove(string->_data, data, length);
 }
                              
 char *TKAStringStructGetData(TKAStringStruct *string) {
+    
     return string->_data;
 }
+
+void TKAStringStructOutput(TKAStringStruct *string) {
+    printf("%s", TKAStringStructGetData(string));
+}
+

@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "TKAHumanStruct.h"
+#include "TKAArrayStruct.h"
+#include "TKAStringStructTest.h"
 
 extern
 void TKAHumanStructTestMain();

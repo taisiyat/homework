@@ -7,23 +7,18 @@
 //
 
 #include "TKAHumanStructTest.h"
-#include "TKAHumanStruct.h"
 
 #pragma mark -
 #pragma mark Private Declarations
 
 static
-void TKAStringStructTest();
+void TKAHumanStructKillTest(TKAHumanStruct *human);
 
 static
 void TKAHumanStructTest();
 
 static
-void TKAStringStructOutput(TKAStringStruct *string);
-
-static
 void TKAHumanStructOutput(TKAHumanStruct *human);
-
 
 #pragma mark -
 #pragma mark Public Declarations
@@ -31,148 +26,142 @@ void TKAHumanStructOutput(TKAHumanStruct *human);
 #pragma mark -
 #pragma mark Privat Implementations
 
-void TKAStringStructOutput(TKAStringStruct *string) {
-    printf(" %s ", TKAStringStructGetData(string));
+void TKAHumanStructOutput(TKAHumanStruct *human) {
+    
+    TKAStringStructOutput(TKAHumanStructGetName(human));
+    printf(" ");
+    printf("age = %d, ",TKAHumanStructGetAge(human));
+    printf("gender = %d, ", TKAHumanStructGetGender(human));
+    printf("count children = %d, ", TKAHumanStructGetCountChildren(human));
+    
+    if (NULL != TKAHumanStructGetPartner(human)) {
+        printf("partner = ");
+        TKAStringStructOutput(TKAHumanStructGetName(TKAHumanStructGetPartner(human)));
+        printf(", ");
+    }
+    
+    if (NULL != TKAHumanStructGetFather(human)) {
+        printf("father = ");
+        TKAStringStructOutput(TKAHumanStructGetName(TKAHumanStructGetFather(human)));
+        printf(", ");
+    }
+    
+    if (NULL != TKAHumanStructGetMother(human)) {
+        printf("motner = ");
+        TKAStringStructOutput(TKAHumanStructGetName(TKAHumanStructGetMother(human)));
+        printf(", ");
+    }
+    
+    if (NULL != TKAHumanStructGetChildren(human)) {
+        printf("children: ");
+        TKAArrayStructOutput(TKAHumanStructGetChildren(human));
+    }
+    
+       printf(" \n");
 }
 
-void TKAHumanStructOutput(TKAHumanStruct *human) {
-    TKAStringStructOutput(TKAHumanStructGetName(human));
-    printf("age = %d  ,",TKAHumanStructGetAge(human));
-    printf("gender = %d  ", TKAHumanStructGetGender(human));
-    printf("count children = %d  ", TKAHumanStructGetCountChildren(human));
-    if (NULL != TKAHumanStructGetPartner(human)) {
-        printf("partner =  ");
-        TKAStringStructOutput(TKAHumanStructGetName(TKAHumanStructGetPartner(human)));
-    }
-    if (NULL != TKAHumanStructGetFather(human)) {
-        printf("father =  ");
-        TKAStringStructOutput(TKAHumanStructGetName(TKAHumanStructGetFather(human)));
-    }
-    if (NULL != TKAHumanStructGetMother(human)) {
-        printf("motner =  ");
-        TKAStringStructOutput(TKAHumanStructGetName(TKAHumanStructGetMother(human)));
-    }
-       printf(" \n");
- }
+TKAHumanStruct *TKAHumanStructCreateTest(TKAStringStruct *name, uint8_t age, TKAGender gender) {
 
-void TKAHumanStructInput(TKAHumanStruct *human, TKAStringStruct *name, uint8_t age, TKAGender gender) {
+    TKAHumanStruct *human = TKAHumanStructCreate();
+
     TKAHumanStructSetName(human, name);
     TKAHumanStructSetAge(human, age);
     TKAHumanStructSetGender(human, gender);
-    }
+    
+    return human;
+}
 
-void TKAStringStructTest() {
-    TKAStringStruct *stringTest = TKAStringStructCreate();
-   
-    char *str1="fgfgh";
-    TKAStringStructSetLenght(stringTest, strlen(str1));
-    TKAStringStructCopyData(stringTest, str1, strlen(str1));
-    printf (" %s  %llu",TKAStringStructGetData(stringTest) ,TKAStringStructGetLenght(stringTest));
-    char *str2="fgvnxfgh";
-    TKAStringStructSetLenght(stringTest, strlen(str2));
-    TKAStringStructCopyData(stringTest, str2, strlen(str2));
-    printf (" %s  %llu",TKAStringStructGetData(stringTest) ,TKAStringStructGetLenght(stringTest));
-    TKAStringStructRelease(stringTest);
+void TKAHumanStructKillTest(TKAHumanStruct *human) {
+    TKAHumanStructRelease(human);
 }
 
 void TKAHumanStructTest() {
-    TKAHumanStruct *god = TKAHumanStructCreate();
-    TKAHumanStruct *adam = TKAHumanStructCreate();
-    TKAHumanStruct *eve = TKAHumanStructCreate();
     
-    TKAStringStruct *stringGod = TKAStringStructCreate();
-    char *nameg="God";
-    TKAStringStructSetLenght(stringGod, strlen(nameg));
-    TKAStringStructCopyData(stringGod, nameg, strlen(nameg));
+    TKAStringStruct *stringGod = TKAStringStructCreateTest("God");
+    TKAStringStruct *stringAdam = TKAStringStructCreateTest("Adam");
+    TKAStringStruct *stringEve = TKAStringStructCreateTest("Eve");
+    TKAStringStruct *stringSon1 = TKAStringStructCreateTest("Son1");
+    TKAStringStruct *stringSon2 = TKAStringStructCreateTest("Son2");
+
+    TKAHumanStruct *god = TKAHumanStructCreateTest(stringGod, 100, TKAMale);
+    TKAHumanStruct *adam = TKAHumanStructCreateTest(stringAdam, 30, TKAMale);
+    TKAHumanStruct *eve = TKAHumanStructCreateTest(stringEve, 25, TKAFemale);
     
-    TKAStringStruct *stringAdam = TKAStringStructCreate();
-    char *namea="Adam";
-    TKAStringStructSetLenght(stringAdam, strlen(namea));
-    TKAStringStructCopyData(stringAdam, namea, strlen(namea));
-    
-    TKAStringStruct *stringEve = TKAStringStructCreate();
-    char *namee="Eve";
-    TKAStringStructSetLenght(stringEve, strlen(namee));
-    TKAStringStructCopyData(stringEve, namee, strlen(namee));
-    
-    TKAHumanStructInput(god, stringGod, 100, TKAMale);
-    TKAHumanStructInput(adam, stringAdam, 30, TKAMale);
-    TKAHumanStructInput(eve, stringEve, 25, TKAFemale);
     TKAHumanStructOutput(god);
     TKAHumanStructOutput(adam);
     TKAHumanStructOutput(eve);
     printf(" \n");
+
     TKAHumanStructMarry(adam, eve);
+    
     TKAHumanStructOutput(god);
     TKAHumanStructOutput(adam);
     TKAHumanStructOutput(eve);
     printf(" \n");
-//    TKAHumanStructDivorcePartner(eve);
-//    TKAHumanStructOutput(god);
-//    TKAHumanStructOutput(adam);
-//    TKAHumanStructOutput(eve);
-//    printf(" \n");
-//    TKAHumanStructMarry(god, eve);
-//    TKAHumanStructOutput(god);
-//    TKAHumanStructOutput(adam);
-//    TKAHumanStructOutput(eve);
-//    printf(" \n");
-
-    TKAHumanStructDivorce(adam, eve);
+    
+    TKAHumanStructDivorcePartner(eve);
+    
     TKAHumanStructOutput(god);
     TKAHumanStructOutput(adam);
     TKAHumanStructOutput(eve);
     printf(" \n");
-//    TKAHumanStructDivorce(god, eve);
+    
+    TKAHumanStructMarry(god, eve);
+    
+    TKAHumanStructOutput(god);
+    TKAHumanStructOutput(adam);
+    TKAHumanStructOutput(eve);
+    printf(" \n");
+
+//    TKAHumanStructDivorce(adam, eve);
+//    
 //    TKAHumanStructOutput(god);
 //    TKAHumanStructOutput(adam);
 //    TKAHumanStructOutput(eve);
-//    
-//    
-    char *names = "Son";
+//    printf(" \n");
     
-//    TKAHumanStruct *son = TKAHumanStructCreate();
-//    TKAHumanStructBorn1(son, adam, eve, TKAMale);
+    TKAHumanStructDivorce(god, eve);
     
-    TKAHumanStruct *son = TKAHumanStructBorn(adam, eve, TKAMale);
+    TKAHumanStructOutput(god);
+    TKAHumanStructOutput(adam);
+    TKAHumanStructOutput(eve);
+    printf(" \n");
     
-    TKAStringStruct *stringSon = TKAStringStructCreate();
-    TKAStringStructSetLenght(stringSon, strlen(names));
-    TKAStringStructCopyData(stringSon, names, strlen(names));
-    TKAHumanStructSetName(son, stringSon);
-    TKAHumanStructOutput(son);
+    TKAHumanStruct *son1 = TKAHumanStructBorn(adam, eve, TKAMale);
+    TKAHumanStructSetName(son1, stringSon1);
+
+    TKAHumanStructOutput(son1);
+    TKAHumanStructOutput(god);
+    TKAHumanStructOutput(adam);
+    TKAHumanStructOutput(eve);
+    printf(" \n");
+    
+    TKAHumanStruct *son2 = TKAHumanStructBorn(god, eve, TKAMale);
+    TKAHumanStructSetName(son2, stringSon2);
+    
+    TKAHumanStructOutput(son1);
+    TKAHumanStructOutput(son2);
     TKAHumanStructOutput(god);
     TKAHumanStructOutput(adam);
     TKAHumanStructOutput(eve);
     
-    TKAHumanStructDie(son);
-    TKAHumanStructDie(god);
-    TKAHumanStructDie(adam);
-    TKAHumanStructDie(eve);
+    TKAHumanStructKillTest(son1);
+    TKAHumanStructKillTest(son2);
+    TKAHumanStructKillTest(god);
+    TKAHumanStructKillTest(adam);
+    TKAHumanStructKillTest(eve);
     
-    TKAStringStructRelease(stringSon);
-    TKAStringStructRelease(stringGod);
-    TKAStringStructRelease(stringAdam);
-    TKAStringStructRelease(stringEve);
-   
+    TKAStringStructKillTest(stringSon1);
+    TKAStringStructKillTest(stringSon2);
+    TKAStringStructKillTest(stringGod);
+    TKAStringStructKillTest(stringAdam);
+    TKAStringStructKillTest(stringEve);
 }
-
-void TKAArrayStructTest() {
-    
-    
-}
-
 
 #pragma mark -
 #pragma mark Public Implementations
 
 void TKAHumanStructTestMain(){
-//    char *strHelp = "abbhjhtyutrytyuytytyty7686hfghfvghvhgvhgvhgvhgvhgvhgjjvg";
-//    printf(" %lu ", sizeof(*strHelp));
-//    printf(" %lu ", strlen(strHelp));
-//    printf(" %s ", strHelp);
-//    TKAStringStructTest();
   
      TKAHumanStructTest();
-    TKAArrayStructTest();
 }

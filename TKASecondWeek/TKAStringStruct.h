@@ -16,7 +16,7 @@
 struct TKAStringStruct {
     uint64_t _referenceCount;
     char *_data;
-    uint64_t _lenght;
+    uint64_t _length;
 };
 typedef struct TKAStringStruct TKAStringStruct;
 
@@ -30,15 +30,18 @@ extern
 void TKAStringStructRelease(TKAStringStruct *string);
 
 extern
-void TKAStringStructSetLenght(TKAStringStruct *string, uint64_t lenght);
+void TKAStringStructSetLength(TKAStringStruct *string, uint64_t length);
 
 extern
-uint64_t TKAStringStructGetLenght(TKAStringStruct *string);
+uint64_t TKAStringStructGetLength(TKAStringStruct *string);
 
 extern
 char *TKAStringStructGetData(TKAStringStruct *string);
 
 extern
-void TKAStringStructCopyData(TKAStringStruct *string, char *data, uint64_t lenght);
+void TKAStringStructCopyData(TKAStringStruct *string, char *data, uint64_t length);
+
+extern
+void TKAStringStructOutput(TKAStringStruct *string);
 
 #endif /* defined(__TKASecondWeek__TKAStringStruct__) */

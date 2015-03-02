@@ -9,28 +9,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TKASecondWeek/TKAStringStruct.c"
-            timestampString = "446629710.991199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "TKAStringStructRelease()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "TKASecondWeek/TKAHumanStructTest.c"
-            timestampString = "446650512.232455"
+            timestampString = "446857242.589867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "TKAHumanStructTest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -41,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TKASecondWeek/TKAHumanStructTest.c"
-            timestampString = "446650512.232455"
+            filePath = "TKASecondWeek/TKAStringTest.c"
+            timestampString = "446996978.299032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "TKAHumanStructTest()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "TKAStringTest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

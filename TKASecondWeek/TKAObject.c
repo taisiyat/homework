@@ -11,10 +11,10 @@
 #pragma mark -
 #pragma mark Public Implementations
 
-void *__TKAObjectCreate(size_t objectSize, TKADeallocateCallback deallocateCollback) {
+void *__TKAObjectCreate(size_t objectSize, TKADeallocateCallback deallocateCallback) {
     TKAObject *object = calloc(1, objectSize);
     object->_referenceCount = 1;
-    object->_deallocateCollback = deallocateCollback;
+    object->_deallocateCallback = deallocateCallback;
     
     return object;
 }
@@ -29,23 +29,30 @@ void *TKAobjectRetain(void *object) {
 
 void TKAObjectRelease(void *voidObject) {
     if (NULL == voidObject) {
+        
         return;
     }
+    
     TKAObject *object = (TKAObject *)voidObject;
     object->_referenceCount--;
+    
     if (0 == object->_referenceCount) {
-        object->_deallocateCollback(object);
+        object->_deallocateCallback(object);
     }
+    
 }
 
 uint64_t TKAObjectGetReferenceCount(void *object) {
     if (NULL == object) {
+        
         return 0;
     }
+    
     return ((TKAObject *)object)->_referenceCount;
 }
 
 void __TKAObjectDeallocate(void *object) {
+    
     free(object);
 }
 

@@ -8,13 +8,27 @@
 
 #include <stdio.h>
 #include "TKAHumanStructTest.h"
+#include "TKAStringStructTest.h"
+#include "TKAArrayStructTest.h"
+#include "TKAHumanTest.h"
+#include "TKAStringTest.h"
+#include "TKAArrayTest.h"
 
 
 int main(int argc, const char * argv[]) {
     // insert code here...
     
-    TKAHumanStructTestMain();
+//    TKAHumanStructTestMain();
+//    TKAStringStructTestMain();
+//    TKAArrayStructTestMain();
+
+//  TKAHumanTestMain();
+    TKAStringTestMain();
+//  TKAArrayTestMain();
+
+    
     
     printf("Hello, World!\n");
+    
     return 0;
 }
