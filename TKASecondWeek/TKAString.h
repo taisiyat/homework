@@ -17,19 +17,11 @@
 
 struct TKAString {
     TKAObject _object;
+    
     char *_data;
     uint64_t _length;
 };
 typedef struct TKAString TKAString;
-
-extern
-TKAString *TKAStringCreate();
-
-extern
-void TKAStringRetain(TKAString *string);
-
-extern
-void TKAStringRelease(TKAString *string);
 
 extern
 void TKAStringSetLength(TKAString *string, uint64_t length);

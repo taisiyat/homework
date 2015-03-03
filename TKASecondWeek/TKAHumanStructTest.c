@@ -60,7 +60,7 @@ void TKAHumanStructOutput(TKAHumanStruct *human) {
        printf(" \n");
 }
 
-TKAHumanStruct *TKAHumanStructCreateTest(TKAStringStruct *name, uint8_t age, TKAGender gender) {
+TKAHumanStruct *TKAHumanStructCreateTest(TKAStringStruct *name, uint8_t age, TKAGenderStruct gender) {
 
     TKAHumanStruct *human = TKAHumanStructCreate();
 
@@ -83,9 +83,9 @@ void TKAHumanStructTest() {
     TKAStringStruct *stringSon1 = TKAStringStructCreateTest("Son1");
     TKAStringStruct *stringSon2 = TKAStringStructCreateTest("Son2");
 
-    TKAHumanStruct *god = TKAHumanStructCreateTest(stringGod, 100, TKAMale);
-    TKAHumanStruct *adam = TKAHumanStructCreateTest(stringAdam, 30, TKAMale);
-    TKAHumanStruct *eve = TKAHumanStructCreateTest(stringEve, 25, TKAFemale);
+    TKAHumanStruct *god = TKAHumanStructCreateTest(stringGod, 100, TKAMaleStruct);
+    TKAHumanStruct *adam = TKAHumanStructCreateTest(stringAdam, 30, TKAMaleStruct);
+    TKAHumanStruct *eve = TKAHumanStructCreateTest(stringEve, 25, TKAFemaleStruct);
     
     TKAHumanStructOutput(god);
     TKAHumanStructOutput(adam);
@@ -127,7 +127,7 @@ void TKAHumanStructTest() {
     TKAHumanStructOutput(eve);
     printf(" \n");
     
-    TKAHumanStruct *son1 = TKAHumanStructBorn(adam, eve, TKAMale);
+    TKAHumanStruct *son1 = TKAHumanStructBorn(adam, eve, TKAMaleStruct);
     TKAHumanStructSetName(son1, stringSon1);
 
     TKAHumanStructOutput(son1);
@@ -136,7 +136,7 @@ void TKAHumanStructTest() {
     TKAHumanStructOutput(eve);
     printf(" \n");
     
-    TKAHumanStruct *son2 = TKAHumanStructBorn(god, eve, TKAMale);
+    TKAHumanStruct *son2 = TKAHumanStructBorn(god, eve, TKAMaleStruct);
     TKAHumanStructSetName(son2, stringSon2);
     
     TKAHumanStructOutput(son1);

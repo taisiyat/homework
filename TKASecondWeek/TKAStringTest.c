@@ -21,26 +21,19 @@ void TKAStringTest();
 #pragma mark Privat Implementations
 
 void TKAStringTest() {
-    TKAString * stringOne = TKAStringCreate();
+    TKAString * stringOne = TKAStringCreateTest("z");
 
-    TKAStringCopyData(stringOne, "z", strlen("z"));
     TKAStringOutput(stringOne);
+    printf (" %llu ", TKAStringGetLength(stringOne));
+    printf("\n");
     
+    TKAStringCopyData(stringOne, "testsecond", strlen("testsecond"));
+
+    TKAStringOutput(stringOne);
     printf (" %llu ", TKAStringGetLength(stringOne));
     printf("\n");
     
     TKAObjectRelease(stringOne);
-    TKAStringRelease(stringOne);
-}
-    
-//    TKAStringCopyData(stringOne, "testsecond", strlen("testsecond"));
-//    TKAObjectRetain(stringOne);
-//    TKAObjectRelease(stringOne);
-//    TKAObjectRelease(stringOne);
-//    TKAStringOutput(stringOne);
-//    printf (" %llu ", TKAStringGetLength(stringOne));
-//    printf("\n");
-    
 //    TKAString *stringTwo = TKAObjectCreate(TKAString);
 //
 //    TKAStringCopyData(stringOne, "testsecond", strlen("testsecond"));
@@ -58,23 +51,19 @@ void TKAStringTest() {
 //    printf (" %llu ", TKAStringGetLength(stringOne));
 //    printf("\n");
     
-//    TKAStringKillTest(stringOne);
 
 
+}
 #pragma mark -
 #pragma mark Public Implementations
 
-//TKAString *TKAStringCreateTest(char *string) {
-//    TKAString *stringTest = TKAStringCreate();
-//    TKAStringCopyData(stringTest, string, strlen(string));
-//    
-//    return stringTest;
-//}
-//
-//void TKAStringKillTest(TKAString *stringTest) {
-//    TKAStringRelease(stringTest);
-//}
-//
+TKAString *TKAStringCreateTest(char *string) {
+    TKAString * stringTest = TKAObjectCreate(TKAString);
+    TKAStringCopyData(stringTest, string, strlen(string));
+    
+    return stringTest;
+}
+
 void TKAStringTestMain() {
     
     TKAStringTest();

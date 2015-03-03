@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef void(*TKADeallocateCallback) (void *);
+typedef void(*TKADeallocateCallback)(void *);
 
 struct TKAObject {
     uint64_t _referenceCount;
@@ -22,9 +22,8 @@ typedef struct TKAObject TKAObject;
 
 extern
 void *__TKAObjectCreate(size_t objectSize, TKADeallocateCallback deallocateCallback);
-
 #define TKAObjectCreate(type)\
-    __TKAObjectCreate(sizeof(type), (TKADealocateCallback__##type## Deallocate)
+    __TKAObjectCreate(sizeof(type), (TKADeallocateCallback)__##type##Deallocate)
 
 extern
 void *TKAObjectRetain(void *object);

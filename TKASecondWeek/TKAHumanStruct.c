@@ -83,11 +83,11 @@ uint8_t TKAHumanStructGetAge(TKAHumanStruct *human) {
     return human->_age;
 }
 
-void TKAHumanStructSetGender(TKAHumanStruct *human, TKAGender gender) {
+void TKAHumanStructSetGender(TKAHumanStruct *human, TKAGenderStruct gender) {
     human->_gender = gender;
 }
 
-TKAGender TKAHumanStructGetGender(TKAHumanStruct *human) {
+TKAGenderStruct TKAHumanStructGetGender(TKAHumanStruct *human) {
     
     return human->_gender;
 }
@@ -243,7 +243,7 @@ void TKAHumanStructAddChild(TKAHumanStruct *parent, TKAHumanStruct *child) {
     }
 }
 
-TKAHumanStruct *TKAHumanStructBorn(TKAHumanStruct *father, TKAHumanStruct *mother, TKAGender gender) {
+TKAHumanStruct *TKAHumanStructBorn(TKAHumanStruct *father, TKAHumanStruct *mother, TKAGenderStruct gender) {
     TKAHumanStruct *newBorn = TKAHumanStructCreate();
     
     TKAHumanStructSetAge(newBorn, 0);

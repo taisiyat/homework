@@ -19,9 +19,9 @@ void *__TKAObjectCreate(size_t objectSize, TKADeallocateCallback deallocateCallb
     return object;
 }
 
-void *TKAobjectRetain(void *object) {
+void *TKAObjectRetain(void *object) {
     if (NULL != object) {
-        ((TKAObject *) object)->_referenceCount++;
+        ((TKAObject *)object)->_referenceCount++;
     }
     
     return object;
@@ -29,22 +29,18 @@ void *TKAobjectRetain(void *object) {
 
 void TKAObjectRelease(void *voidObject) {
     if (NULL == voidObject) {
-        
         return;
     }
     
     TKAObject *object = (TKAObject *)voidObject;
     object->_referenceCount--;
-    
     if (0 == object->_referenceCount) {
         object->_deallocateCallback(object);
     }
-    
 }
 
 uint64_t TKAObjectGetReferenceCount(void *object) {
     if (NULL == object) {
-        
         return 0;
     }
     
@@ -52,7 +48,6 @@ uint64_t TKAObjectGetReferenceCount(void *object) {
 }
 
 void __TKAObjectDeallocate(void *object) {
-    
     free(object);
 }
 

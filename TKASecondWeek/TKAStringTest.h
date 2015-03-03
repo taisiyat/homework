@@ -16,10 +16,7 @@
 extern
 void TKAStringTestMain();
 
-//extern
-//TKAString *TKAStringCreateTest();
-//
-//extern
-//void TKAStringKillTest(TKAString *data);
+extern
+TKAString *TKAStringCreateTest();
 
 #endif /* defined(__TKASecondWeek__TKAStringTest__) */
