@@ -19,7 +19,6 @@ void TKABitOutput(unsigned char value);
 
 void TKABitOutput(unsigned char value) {
     printf("value = '%c', %d  by bits = ", value, value);
-
     TKABitOutputFunction(value);
     printf("\n");
 }
@@ -29,11 +28,12 @@ void TKABitOutput(unsigned char value) {
 
 void TKABitOutputFunction(unsigned char value) {
     unsigned char mask = pow(2, 7);
- 
-    for (int iter = 0; iter < 8 * sizeof(value); iter++) {
-        printf("%u", 0!=(value & mask));
+    
+    for (uint8_t iter = 0; iter < 8 * sizeof(value); iter++) {
+        printf("%u", 0 != (value & mask));
         mask /= 2;
     }
+    
 }
 
 void TKABitOutputMain() {

@@ -24,5 +24,4 @@ TKAMamaPapaResult TKAMamaPapaOutput();
 extern
 void TKAMamaPapaOutputMain();
 
-
 #endif /* defined(__TKAFirstWeek__TKAOutputMamaPapa__) */

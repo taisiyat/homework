@@ -7,74 +7,87 @@
 //
 
 #include "TKAStruct.h"
-#include <assert.h>
+//#include <assert.h>
 
-#define TKAStructureOffsetElementTest(type, value) \
+#define TKAStructOffsetElementTest(type, value) \
         {\
         size_t placeValue = offsetof(type, value);\
         printf(" offset of  "#type"."#value" = %lu\n", placeValue);\
         }
 
-#define TKAStructSizeTestFunctionDef(type) \
+#define TKAStructSizeTestFunction(type) \
     void TKAStructSizeTest_##type() {\
         type *structure = malloc(sizeof(*structure));\
         printf(" size of structure "#type" = %lu\n", sizeof(*structure));\
         free(structure);\
     }
 
-#define TKAStructSizeTestDef(type) \
+#define TKAStructSizeTest(type) \
     TKAStructSizeTest_##type();
 
-#define TKAStructSetElementsTestFunctionDef(type) \
-    void TKAStructSetElementsTest_##type() {\
+#define TKAStructOffsetTestFunction(type) \
+    void TKAStructOffsetTest_##type() {\
+        \
         type *structure = malloc(sizeof(*structure));\
-        TKAStructureOffsetElementTest(type, boolValueOne);\
-        TKAStructureOffsetElementTest(type, boolValueTwo);\
-        TKAStructureOffsetElementTest(type, boolValueThree);\
-        TKAStructureOffsetElementTest(type, boolValueFour);\
-        TKAStructureOffsetElementTest(type, boolValueFive);\
-        TKAStructureOffsetElementTest(type, boolValueSix);\
-        TKAStructureOffsetElementTest(type, floatValue);\
-        TKAStructureOffsetElementTest(type, integerValue);\
-        TKAStructureOffsetElementTest(type, longLongValue);\
-        TKAStructureOffsetElementTest(type, shortValueOne);\
-        TKAStructureOffsetElementTest(type, shortValueTwo);\
-        TKAStructureOffsetElementTest(type, shortValueThree);\
-        TKAStructureOffsetElementTest(type, doubleValue);\
-        TKAStructureOffsetElementTest(type, stringValue);\
+        TKAStructOffsetElementTest(type, boolValueOne);\
+        TKAStructOffsetElementTest(type, boolValueTwo);\
+        TKAStructOffsetElementTest(type, boolValueThree);\
+        TKAStructOffsetElementTest(type, boolValueFour);\
+        TKAStructOffsetElementTest(type, boolValueFive);\
+        TKAStructOffsetElementTest(type, boolValueSix);\
+        TKAStructOffsetElementTest(type, floatValue);\
+        TKAStructOffsetElementTest(type, integerValue);\
+        TKAStructOffsetElementTest(type, longLongValue);\
+        TKAStructOffsetElementTest(type, shortValueOne);\
+        TKAStructOffsetElementTest(type, shortValueTwo);\
+        TKAStructOffsetElementTest(type, shortValueThree);\
+        TKAStructOffsetElementTest(type, doubleValue);\
+        TKAStructOffsetElementTest(type, stringValue);\
+        \
         free(structure);\
     }
 
-#define TKAStructSetElementsTestDef(type) \
-    TKAStructSetElementsTest_##type();
+#define TKAStructOffsetTest(type) \
+    TKAStructOffsetTest_##type();
 
-void TKAStructSetElementsTest_Union() {
+void TKAStructOffsetTest_Union() {
     TKAStructWithUnion *structure = malloc(sizeof(*structure));
-    TKAStructureOffsetElementTest(TKAStructWithUnion, bitsFild);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, floatValue);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, integerValue);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, longLongValue);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, shortValueOne);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, shortValueTwo);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, shortValueThree);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, doubleValue);
-    TKAStructureOffsetElementTest(TKAStructWithUnion, stringValue);
+    
+    TKAStructOffsetElementTest(TKAStructWithUnion, bitsFild);
+    TKAStructOffsetElementTest(TKAStructWithUnion, floatValue);
+    TKAStructOffsetElementTest(TKAStructWithUnion, integerValue);
+    TKAStructOffsetElementTest(TKAStructWithUnion, longLongValue);
+    TKAStructOffsetElementTest(TKAStructWithUnion, shortValueOne);
+    TKAStructOffsetElementTest(TKAStructWithUnion, shortValueTwo);
+    TKAStructOffsetElementTest(TKAStructWithUnion, shortValueThree);
+    TKAStructOffsetElementTest(TKAStructWithUnion, doubleValue);
+    TKAStructOffsetElementTest(TKAStructWithUnion, stringValue);
+    
     free(structure);
 }
 
-TKAStructSizeTestFunctionDef(TKAStructFirst);
-TKAStructSizeTestFunctionDef(TKAStructSecond);
-TKAStructSizeTestFunctionDef(TKAStructWithUnion);
-TKAStructSetElementsTestFunctionDef(TKAStructFirst);
-TKAStructSetElementsTestFunctionDef(TKAStructSecond);
+TKAStructSizeTestFunction(TKAStructFirst);
+TKAStructSizeTestFunction(TKAStructSecond);
+TKAStructSizeTestFunction(TKAStructWithUnion);
+TKAStructOffsetTestFunction(TKAStructFirst);
+TKAStructOffsetTestFunction(TKAStructSecond);
 
 void TKAStructMain(){
-    TKAStructSizeTestDef(TKAStructFirst);
-    TKAStructSetElementsTestDef(TKAStructFirst)
+    TKAStructSizeTest(TKAStructFirst);
+    TKAStructOffsetTest(TKAStructFirst);
     printf(" \n");
-    TKAStructSizeTestDef(TKAStructSecond);
-    TKAStructSetElementsTestDef(TKAStructSecond)
+    
+    TKAStructSizeTest(TKAStructSecond);
+    TKAStructOffsetTest(TKAStructSecond);
     printf(" \n");
-    TKAStructSizeTestDef(TKAStructWithUnion);
-    TKAStructSetElementsTest_Union();
+    
+    TKAStructSizeTest(TKAStructWithUnion);
+    TKAStructOffsetTest_Union();
 }
+
+#undef TKAStructOffsetTest//
+#undef TKAStructOffsetTestFunction//
+#undef TKAStructSizeTest//
+#undef TTKAStructSizeTestFunction//
+#undef TKAStructOffsetElementTest//
+

@@ -17,11 +17,13 @@ TKAMamaPapaResult TKAMamaPapaOutput(int value) {
             printf("mama");
             resultMamaPapa = resultMamaPapa+TKAMama;
         }
+        
         if(0 == value%5) {
             printf("papa");
             resultMamaPapa = resultMamaPapa+TKAPapa;
         }
     }
+    
     printf("\n");
     
     return resultMamaPapa;
@@ -34,6 +36,7 @@ void TKAMamaPapaOutputMain() {
     for (int number = numberMin; number <= numberMax; number++) {
         TKAMamaPapaOutput(number);
     }
+    
 }
 
 

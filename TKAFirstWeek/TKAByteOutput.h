@@ -18,12 +18,12 @@
 //} TKAFlagOutput;
 
 typedef enum {
-    TKAOrderCorrect,
-    TKAOrderWrong
-} TKAOrderByte;
+    TKABigEndian,
+    TKALittleEndian
+} TKAEndian;
 
 extern
-TKAOrderByte TKAOrderByteCheck();
+TKAEndian TKAEndianByteCheck();
 
 extern
 void TKAByteOutputMain();

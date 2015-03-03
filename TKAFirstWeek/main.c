@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
     
     //char by bite
     //
-    //TKABitOutputMain();
+    TKABitOutputMain();
     
     //by byte
     //
