@@ -40,6 +40,9 @@ struct TKAHuman {
 typedef struct TKAHuman TKAHuman;
 
 extern
+TKAHuman *TKAHumanCreate(TKAString *name, uint8_t age, TKAGender gender);
+
+extern
 void TKAHumanSetName(TKAHuman *human, TKAString *name);
 
 extern
@@ -104,6 +107,9 @@ void TKAHumanDivorce(TKAHuman *partner1, TKAHuman *partner2);
 
 extern
 void TKAHumanRemoveChild(TKAHuman *parent, TKAHuman *child);
+
+extern
+void TKAHumanRemoveAllChildren(TKAHuman *parent);
 
 extern
 void __TKAHumanDeallocate(TKAHuman *human);

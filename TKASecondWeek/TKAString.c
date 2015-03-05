@@ -43,8 +43,13 @@ uint64_t TKAStringGetLength(TKAString *string) {
 }
 
 void TKAStringCopyData(TKAString *string, char *data, uint64_t length) {
-    TKAStringSetLength(string, length);
-    memmove(string->_data, data, length);
+    if (NULL != string->_data) {
+        free(string->_data);
+        string->_data = NULL;
+    }
+
+    TKAStringSetLength(string, length+1);
+    memmove(string->_data, data, length+1);
 }
 
 char *TKAStringGetData(TKAString *string) {

@@ -52,6 +52,9 @@ extern
 void TKAArrayOutput(TKAArray *array);
 
 extern
+void TKAArrayRemoveAllChildren(TKAArray *array);
+
+extern
 void __TKAArrayDeallocate(TKAArray *array);
 
 #endif /* defined(__TKASecondWeek__TKAArray__) */

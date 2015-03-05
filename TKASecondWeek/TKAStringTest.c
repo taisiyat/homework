@@ -21,7 +21,7 @@ void TKAStringTest();
 #pragma mark Privat Implementations
 
 void TKAStringTest() {
-    TKAString * stringOne = TKAStringCreateTest("z");
+    TKAString * stringOne = TKAStringCreateTest("test");
 
     TKAStringOutput(stringOne);
     printf (" %llu ", TKAStringGetLength(stringOne));
@@ -32,6 +32,12 @@ void TKAStringTest() {
     TKAStringOutput(stringOne);
     printf (" %llu ", TKAStringGetLength(stringOne));
     printf("\n");
+    
+//    TKAStringCopyData(stringOne, "", strlen(""));
+//    
+//    TKAStringOutput(stringOne);
+//    printf (" %llu ", TKAStringGetLength(stringOne));
+//    printf("\n");
     
     TKAObjectRelease(stringOne);
 //    TKAString *stringTwo = TKAObjectCreate(TKAString);
@@ -68,3 +74,13 @@ void TKAStringTestMain() {
     
     TKAStringTest();
 }
+
+// TKAString
+//      after being created
+//             data should be NULL, length should be not 0
+//                  objects reference count shouldn't change
+//                      after copying data
+//                          data should be not NULL, length should be not 0
+//                              objects reference count shouldn't change
+//                             
+
