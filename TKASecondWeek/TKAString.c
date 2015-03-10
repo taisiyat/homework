@@ -15,10 +15,7 @@
 #pragma mark Privat Implementations
 
 void __TKAStringDeallocate(TKAString *string) {
-    if (NULL != string->_data) {
-        free(string->_data);
-        string->_data = NULL;
-    }
+    TKAStringSetData(string, NULL);
     
     __TKAObjectDeallocate(string);
 }
@@ -27,6 +24,12 @@ void __TKAStringDeallocate(TKAString *string) {
 #pragma mark Public Implementations
 
 void TKAStringSetLength(TKAString *string, uint64_t length) {
+    if (0 == length) {
+        free(string->_data);
+        string->_data = NULL;
+        string->_length = length;
+    }
+    
     if (string->_length != length) {
         string->_data = realloc(string->_data, length * sizeof(*string->_data));
         
@@ -39,20 +42,46 @@ void TKAStringSetLength(TKAString *string, uint64_t length) {
 }
 
 uint64_t TKAStringGetLength(TKAString *string) {
+    if (NULL == string) {
+        return UINT64_MAX ;
+    }
+    
     return string->_length;
 }
 
-void TKAStringCopyData(TKAString *string, char *data, uint64_t length) {
-    if (NULL != string->_data) {
-        free(string->_data);
-        string->_data = NULL;
+void TKAStringSetData(TKAString *string, char *data) {
+    if (NULL == string) {
+        return;
     }
+    if (NULL == data) {
+        TKAStringSetLength(string, 0);
+    }
+    
+    if (string->_data != data) {
+        if (NULL != string->_data) {
+            free(string->_data);
+            string->_data = NULL;
+        }
+ 
+        if (NULL != data) {
+            TKAStringCopyData(string, data);
+        }
 
-    TKAStringSetLength(string, length+1);
-    memmove(string->_data, data, length+1);
+    }
+    
+}
+
+void TKAStringCopyData(TKAString *string, char *data) {
+    uint64_t lengthData = strlen(data);
+    TKAStringSetLength(string, lengthData+1);
+    memmove(string->_data, data, lengthData+1);
 }
 
 char *TKAStringGetData(TKAString *string) {
+    if (NULL == string) {
+        return NULL;
+    }
+
     return string->_data;
 }
 
